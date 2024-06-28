@@ -9,53 +9,63 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Name"/>
+        android:text="Name"
+        android:textStyle="bold"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter your name"
+        android:drawableRight="@drawable/baseline_person_24"
         android:id="@+id/name"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Admission Number"/>
+        android:text="Admission Number"
+        android:textStyle="bold"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter your Admission Number"
+        android:drawableRight="@drawable/baseline_numbers_24"
         android:inputType="number"
         android:id="@+id/admnum"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="System Number" />
+        android:text="System Number"
+        android:textStyle="bold"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter your System Number"
+        android:drawableRight="@drawable/baseline_computer_24"
         android:inputType="number"
         android:id="@+id/sysnum"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Department"/>
+        android:text="Department"
+        android:textStyle="bold"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter your Department"
+        android:drawableRight="@drawable/baseline_menu_book_24"
         android:id="@+id/depname"/>
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="add"
-        android:background="#9C27B0"
+        android:background="#393184"
+        android:textColor="#ffffff"
         android:layout_margin="40px"
         android:id="@+id/addbtn"/>
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="logout"
-        android:background="#9C27B0"
+        android:background="#393184"
+        android:textColor="#ffffff"
         android:layout_margin="40px"
         android:id="@+id/logoutbtn"/>
 

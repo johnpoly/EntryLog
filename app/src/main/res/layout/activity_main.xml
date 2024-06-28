@@ -4,32 +4,42 @@
     android:background="#ffffff"
     android:padding="80px"
     android:gravity="center"
-    xmlns:android="http://schemas.android.com/apk/res/android">
 
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView
+        android:layout_width="470px"
+        android:layout_height="400px"
+        android:background="@drawable/fisat"
+        android:layout_margin="40px"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Username"/>
+        android:text="Username"
+        android:textStyle="bold"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter your Username"
+        android:drawableRight="@drawable/baseline_person_24"
         android:id="@+id/uname"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
         android:text="Password"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:hint="Enter your Password"
+        android:drawableRight="@drawable/baseline_lock_24"
         android:id="@+id/pass"/>
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="login"
-        android:background="#9C27B0"
+        android:background="#393184"
+        android:textColor="#ffffff"
         android:layout_margin="40px"
         android:id="@+id/logbtn"/>
 
