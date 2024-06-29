@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:text="login"
         android:background="#393184"
-        android:textColor="#ffffff"
+        android:textColor="#EFB469"
         android:layout_margin="40px"
         android:id="@+id/logbtn"/>
 

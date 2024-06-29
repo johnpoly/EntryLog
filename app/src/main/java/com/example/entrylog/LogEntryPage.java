@@ -14,10 +14,22 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class LogEntryPage extends AppCompatActivity {
 
     EditText ed1,ed2,ed3,ed4;
     AppCompatButton b1,b2;
+
+    String apiurl="http://10.0.4.16:3000/api/students";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,11 +47,47 @@ public class LogEntryPage extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //Value Reading
                 String getName=ed1.getText().toString();
                 String getAdmissionNumber=ed2.getText().toString();
                 String getSystemNumber=ed3.getText().toString();
                 String getDepartment=ed4.getText().toString();
-                Toast.makeText(getApplicationContext(),getName+" "+getAdmissionNumber+" "+getSystemNumber+" "+getDepartment,Toast.LENGTH_SHORT).show();
+
+                //creating JSON Object
+                JSONObject student=new JSONObject();
+                try {
+                    student.put("name",getName);
+                    student.put("admission_number",getAdmissionNumber);
+                    student.put("system_number",getSystemNumber);
+                    student.put("department",getDepartment);
+                } catch (JSONException e) {
+                    throw new RuntimeException(e);
+                }
+
+                //JSON Object request creation
+                JsonObjectRequest jasonObjectRequest=new JsonObjectRequest(
+                        Request.Method.POST,
+                        apiurl,
+                        student,
+                        new Response.Listener<JSONObject>() {
+                            @Override
+                            public void onResponse(JSONObject response) {
+                                Toast.makeText(getApplicationContext(), "Added Successfully", Toast.LENGTH_SHORT).show();
+                            }
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                Toast.makeText(getApplicationContext(), "Something went wrong", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                );
+
+                //Request Queue
+                RequestQueue requestQueue= Volley.newRequestQueue(getApplicationContext());
+                requestQueue.add(jasonObjectRequest);
+
             }
         });
         b2.setOnClickListener(new View.OnClickListener() {

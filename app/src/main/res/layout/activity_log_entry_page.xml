@@ -57,7 +57,7 @@
         android:layout_height="wrap_content"
         android:text="add"
         android:background="#393184"
-        android:textColor="#ffffff"
+        android:textColor="#EFB469"
         android:layout_margin="40px"
         android:id="@+id/addbtn"/>
     <androidx.appcompat.widget.AppCompatButton
@@ -65,7 +65,7 @@
         android:layout_height="wrap_content"
         android:text="logout"
         android:background="#393184"
-        android:textColor="#ffffff"
+        android:textColor="#EFB469"
         android:layout_margin="40px"
         android:id="@+id/logoutbtn"/>
 
